@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+header,#login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+}
+
+header .logo img
+{
+    width: 60px;
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.search-login {
+    display: flex;
+    gap: 10px;
+}
+
+.banner {
+    background-image:url('image (2).png');
+    color: rgb(17, 6, 6);
+    text-align: center;
+    padding: 50px 20px;
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-position:center; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.banner-content {
+    background: rgba(0, 0, 0, 0.889); /* Optional: adds a dark overlay for better text readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-size: 36px;
+}
+
+.banner p {
+    font-size: 1.2em;
+}
+
+.banner button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #FF0000;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+.info-cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 80%;
+    gap: 20px;
+  }
+  
+  .info-card {
+    background-color: #003366;
+    color: #ddd;
+    padding: 40px 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    
+  }
+  
+  .info-card:hover {
+    background-color: #ddd;
+    color:black;
+    transform: translateY(-5px);
+  }
+
+.services, .testimonials, .statistics {
+    padding: 20px;
+    text-align: center;
+}
+
+.service {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    background: #F5F5F5;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}

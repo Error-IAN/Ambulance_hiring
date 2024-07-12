@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Ambulance</title>
+    <link rel="stylesheet" href="request.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="ambulance-container">
+        <div class="ambulance-form">
+            <h1>Request an Ambulance</h1>
+            <p>Please fill in your location and reason</p>
+            <form id="requestForm">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Enter your location" required>
+
+                <label for="reason">Reason</label>
+                <select id="reason" name="reason" required>
+                    <option value="" disabled selected>Select reason</option>
+                    <option value="accident">Accident</option>
+                    <option value="heart_attack">Heart Attack</option>
+                    <option value="stroke">Stroke</option>
+                    <option value="difficulty_breathing">Difficulty Breathing</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <button type="submit">Request Ambulance</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal HTML structure -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ambulance Dispatched</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMessage">Ambulance is on its way!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="request.js"></script>
+</body>
+</html>

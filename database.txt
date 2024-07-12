@@ -1,0 +1,61 @@
+CREATE SCHEMA IF NOT EXISTS testdb;
+
+CREATE TABLE testdb."user" (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  phone_number INT NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  location TEXT NOT NULL
+);
+
+-- Create Ambulance Table
+CREATE TABLE testdb."Ambulance" (
+    id SERIAL PRIMARY KEY,
+    location TEXT,
+    latitude DOUBLE PRECISION NOT NULL,
+    longitude DOUBLE PRECISION NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    regist_no VARCHAR(50) NOT NULL
+);
+
+-- Create UserRequest Table
+CREATE TABLE testdb."UserRequest" (
+    id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    reason TEXT NOT NULL,
+    location VARCHAR(255),
+    latitude DOUBLE PRECISION,
+    longitude DOUBLE PRECISION,
+    FOREIGN KEY (user_id) REFERENCES testdb."user" (id)
+);
+
+-- Create Assigned Table
+CREATE TABLE testdb."Assigned" (
+    id SERIAL PRIMARY KEY,
+    user_request_id INT NOT NULL,
+    ambulance_id INT NOT NULL,
+    FOREIGN KEY (user_request_id) REFERENCES testdb."UserRequest" (id),
+    FOREIGN KEY (ambulance_id) REFERENCES testdb."Ambulance" (id)
+);
+
+
+ALTER TABLE testdb."Assigned"
+ADD CONSTRAINT fk_user_request
+FOREIGN KEY (user_request_id)
+REFERENCES testdb."UserRequest" (id);
+
+-- Insert example data into AmbulanceType table
+INSERT INTO testdb."AmbulanceType" (reason, type) VALUES
+('Heart Attack', 'Cardiac Ambulance'),
+('Accident', 'Trauma Ambulance'),
+('Fire', 'Fire Ambulance');
+
+
+INSERT INTO testdb."Ambulance" (location, latitude, longitude, type, regist_no)
+SELECT
+    'Location ' || id,
+    (23.836872 + (random() * 0.01 * 2 - 0.01)), -- Random latitude within ±0.01 degrees (approximately 1.11 km at the equator)
+    (91.2976887 + (random() * 0.01 * 2 - 0.01)), -- Random longitude within ±0.01 degrees (approximately 1.11 km at the equator)
+    'Type ' || (id % 3 + 1), -- Random type, assuming 3 types
+    'RegNo ' || id
+FROM generate_series(1, 10) AS id;

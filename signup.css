@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a3b5d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 800px;
+    height: 690px;
+    max-width: 100%;
+}
+
+.login-form {
+    padding: 40px;
+    width: 50%;
+}
+
+.login-form h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.login-form p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+}
+
+.remember input {
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0514b7;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #007BFF
+}
+
+
+.login-form .google-signin {
+    background-color: #f90a0e;
+    margin-top: 10px;
+}
+
+.login-form .signup {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-form .signup a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.login-form .signup a:hover {
+    text-decoration: underline;
+}
+
+.login-image {
+    width: 50%;
+}
+
+.login-image img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    margin-top: 200px;
+
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Ambulance Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="login.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="ambulance_logo.png" alt="Emergency Ambulance">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+        <div class="search-login">
+            <button id="loginButton" onclick="login()">Login</button>
+        </div>
+    </header>
+    <main>
+        <section class="banner">
+            <h1>Swift and Reliable Emergency Services</h1>
+            <p>Here for you 24/7</p>
+            <button id="request" onclick="request()">Request Ambulance</button>
+        </section>
+
+        <h1><center>Services Provided</center></h1>
+        <section class="info-cards">
+            <div class="info-card"><h1>Life Support</h1></div>
+            <div class="info-card"><h1>Medical Support</h1></div>
+            <div class="info-card"><h1>Emergency Kit</h1></div>
+        </section>
+
+        <section class="testimonials">
+            <blockquote><p>"Excellent service, very responsive and professional."</p><footer>- Satisfied User</footer></blockquote>
+            <blockquote><p>"Quick response and caring paramedics."</p><footer>- Happy Patient</footer></blockquote>
+        </section>
+        
+        <section class="info-cards">
+            <div class="info-card"><h2>Response Time</h2><p>5 Minutes</p></div>
+            <div class="info-card"><h2>Ambulances</h2><p>50+</p></div>
+            <div class="info-card"><h2>Patients Served</h2><p>10,000+</p></div>
+        </section>
+    </main>
+    <footer>
+        <div class="contact-info">
+            <p>Address: 123 Emergency St, City, Country</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Email: contact@emergencyambulance.com</p>
+        </div>
+        <div class="quick-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script>
+        function request() {
+            window.location.href = 'request.html';
+        }
+
+        $(document).ready(function() {
+            // Check if the user is logged in
+            let isLoggedIn = localStorage.getItem('isLoggedIn');
+            let userName = localStorage.getItem('userName');
+
+            if (isLoggedIn === 'true' && userName) {
+                $('#loginButton').text(userName).hide();
+            }
+        });
+    </script>
+</body>
+</html>
